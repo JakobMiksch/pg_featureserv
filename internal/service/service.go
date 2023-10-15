@@ -57,7 +57,7 @@ func createServers() {
 
 	router = initRouter(confServ.BasePath)
 
-	// writeTimeout is slighlty longer than request timeout to allow writing error response
+	// writeTimeout is slightly longer than request timeout to allow writing error response
 	timeoutSecRequest := conf.Configuration.Server.WriteTimeoutSec
 	timeoutSecWrite := timeoutSecRequest + 1
 
@@ -70,7 +70,7 @@ func createServers() {
 	// Use a TimeoutHandler to ensure a request does not run past the WriteTimeout duration.
 	// This provides a context that allows cancellation to be propagated
 	// down to the database driver.
-	//(Unfortunately this does not propagate to the database itself.
+	// (Unfortunately this does not propagate to the database itself.
 	// That will require another mechanism such as session config statement_timeout)
 	// If timeout expires, service returns 503 and a text message
 	timeoutHandler := http.TimeoutHandler(compressHandler,
