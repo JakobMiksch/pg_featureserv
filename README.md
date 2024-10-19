@@ -84,7 +84,7 @@ Without `go` installed, you can build `pg_featureserv` in a docker image:
   ```
 
 * This creates a `pg_featureserv` executable in the application directory
-* (Optional) Run the unit tests using `go test`
+* (Optional) Run the unit tests using `go test ./...`
 
 ### Docker image of `pg_featureserv`
 
@@ -185,7 +185,7 @@ The example requests assume that the service is running locally and configured
 to listen on port 9000.
 
 - Landing page (HTML or JSON): http://localhost:9000/
-- Landing page (HTML): http://localhost:9000/index,html
+- Landing page (HTML): http://localhost:9000/index.html
 - Landing page (JSON): http://localhost:9000/index.json
 - OpenAPI definition: http://localhost:9000/api
 - OpenAPI test UI: http://localhost:9000/api.html
